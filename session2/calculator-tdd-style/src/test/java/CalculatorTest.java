@@ -142,4 +142,44 @@ public class CalculatorTest {
         assertEquals(2122010,productResult);
     }
 
+    @Test
+    void testIntQuotient(){
+        int quotientResult = calculator.divide(5,2);
+        assertEquals(2, quotientResult);
+    }
+
+    @Test
+    void testIntQuotientWithZeroDivisor(){
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.divide(10,0),
+                "Expected divide() to throw IllegalArgumentException, but it didn't"
+        );
+        assertEquals("Cannot divide by 0.", thrown.getMessage());
+    }
+
+    @Test
+    void testFloatQuotient(){
+        float quotientResult = calculator.divide(8.25f,20.4f);
+        assertEquals(0.4044, quotientResult, 0.0001);
+    }
+
+    @Test
+    void testDoubleQuotient(){
+        double quotientResult = calculator.divide(8.5,2);
+        assertEquals(4.25, quotientResult, 0.0001);
+    }
+
+    @Test
+    void testShortQuotient(){
+        short quotientResult = calculator.divide((short)10, (short)2);
+        assertEquals(5, quotientResult);
+    }
+
+    @Test
+    void testLongQuotient(){
+        long quotientResult = calculator.divide(10000,200);
+        assertEquals(500, quotientResult);
+    }
+
 }

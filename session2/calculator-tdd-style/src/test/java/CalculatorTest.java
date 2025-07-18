@@ -56,12 +56,12 @@ public class CalculatorTest {
     @Test
     void testShortSum(){
         short sumResult = calculator.add((short) 6, (short) 5);
-        assertEquals(10,sumResult);
+        assertEquals(11,sumResult);
     }
 
     @Test
     void testLongSum(){
-        Long sumResult = calculator.add(6,10);
+        Long sumResult = calculator.add(6L,10L);
         assertEquals(16, sumResult);
     }
 

@@ -159,6 +159,46 @@ public class CalculatorTest {
     }
 
     @Test
+    void testFloatQuotientWithZeroDivisor(){
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.divide(10.01f,0f),
+                "Expected divide() to throw IllegalArgumentException, but it didn't"
+        );
+        assertEquals("Cannot divide by 0.", thrown.getMessage());
+    }
+
+    @Test
+    void testDoubleQuotientWithZeroDivisor(){
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.divide(10.0,0),
+                "Expected divide() to throw IllegalArgumentException, but it didn't"
+        );
+        assertEquals("Cannot divide by 0.", thrown.getMessage());
+    }
+
+    @Test
+    void testShortQuotientWithZeroDivisor(){
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.divide((short)10,0),
+                "Expected divide() to throw IllegalArgumentException, but it didn't"
+        );
+        assertEquals("Cannot divide by 0.", thrown.getMessage());
+    }
+
+    @Test
+    void testLongQuotientWithZeroDivisor(){
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.divide(100000L,0L),
+                "Expected divide() to throw IllegalArgumentException, but it didn't"
+        );
+        assertEquals("Cannot divide by 0.", thrown.getMessage());
+    }
+
+    @Test
     void testFloatQuotient(){
         float quotientResult = calculator.divide(8.25f,20.4f);
         assertEquals(0.4044, quotientResult, 0.0001);
@@ -179,7 +219,7 @@ public class CalculatorTest {
     @Test
     void testLongQuotient(){
         long quotientResult = calculator.divide(10000,200);
-        assertEquals(500, quotientResult);
+        assertEquals(50, quotientResult);
     }
 
 }

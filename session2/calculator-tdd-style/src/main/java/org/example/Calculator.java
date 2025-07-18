@@ -20,54 +20,75 @@ public class Calculator {
         return !status;
     }
 
-    public int add(int num1, int num2){
-        return num1 + num2;
+    public int add(int a, int b){
+        return a + b;
     }
 
-    public float add(float num1, float num2){
-        return num1 + num2;
+    public float add(float a, float b){
+        return a + b;
     }
 
-    public double add(double num1, double num2){
-        return num1 + num2;
+    public double add(double a, double b){
+        return a + b;
     }
 
-    public short add(short num1, short num2){
-        return (short) (num1 + num2);
+    public short add(short a, short b){
+        return (short) (a + b);
     }
 
-    public long add(long num1, long num2){
-        return num1 + num2;
+    public long add(long a, long b){
+        return a + b;
     }
 
-    public int subtract(int num1, int num2){
-        return num1 - num2;
+    public int subtract(int a, int b){
+        return a - b;
     }
 
-    public float subtract(float num1, float num2){return num1 - num2;}
-    public double subtract(double num1, double num2){
-        return num1 - num2;
+    public float subtract(float a, float b){return a - b;}
+    public double subtract(double a, double b){
+        return a - b;
     }
-    public short subtract(short num1, short num2){
-        return (short) (num1 - num2);
+    public short subtract(short a, short b){
+        return (short) (a - b);
     }
-    public long subtract(long num1, long num2){
-        return num1 - num2;
+    public long subtract(long a, long b){
+        return a - b;
     }
 
-    public int multiply(int num1, int num2){
-        return num1 * num2;
+    public int multiply(int a, int b){
+        return a * b;
     }
-    public float multiply(float num1, float num2){return num1 * num2;}
-    public double multiply(double num1, double num2){
-        return num1 * num2;
+    public float multiply(float a, float b){return a * b;}
+    public double multiply(double a, double b){return a * b;}
+    public short multiply(short a, short b){return (short) (a * b);}
+    public long multiply(long a, long b){return a * b;}
+
+    public int divide(int a, int b){
+        if(b == 0){
+            throw new IllegalArgumentException("Cannot divide by 0.");
+        }
+        return a / b;
     }
-    public short multiply(short num1, short num2){
-        return (short) (num1 * num2);
-    }
-    public long multiply(long num1, long num2){
-        return num1 * num2;
-    }
+    public float divide(float a, float b){
+        if(b == 0.0f){
+            throw new IllegalArgumentException("Cannot divide by 0.");
+        }
+        return a / b;}
+    public double divide(double a, double b){
+        if(b == 0.0){
+            throw new IllegalArgumentException("Cannot divide by 0.");
+        }
+        return a / b;}
+    public short divide(short a, short b){
+        if(b == 0){
+            throw new IllegalArgumentException("Cannot divide by 0.");
+        }
+        return (short) (a / b);}
+    public long divide(long a, long b){
+        if(b == 0L){
+            throw new IllegalArgumentException("Cannot divide by 0.");
+        }
+        return a / b;}
 
 
 

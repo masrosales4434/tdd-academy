@@ -84,6 +84,23 @@ public class CalculatorTest {
     }
 
     @Test
+    void testLongDifference(){
+        Long diffResult = calculator.subtract(10L,3L);
+        assertEquals(7L,diffResult);
+    }
+
+    @Test
+    void testShortDifference(){
+        short diffResult = calculator.subtract((short)60,(short)3);
+        assertEquals(63,diffResult);
+    }
+    @Test
+    void testDoubleDifference(){
+        Double diffResult = calculator.subtract(10.50,3.11);
+        assertEquals(13.61,diffResult);
+    }
+
+    @Test
     void testDifferenceOfNegative(){
         float diffResult = calculator.subtract(-6,4);
         assertEquals(-10,diffResult);

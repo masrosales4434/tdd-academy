@@ -118,5 +118,28 @@ public class CalculatorTest {
         assertEquals(-16,productResult);
     }
 
+    @Test
+    void testFloatProductIsCorrect(){
+        float productResult = calculator.multiply(2.5f,8.2f);
+        assertEquals(20.5,productResult, 0.001);
+    }
+
+    @Test
+    void testDoubleProductIsCorrect(){
+        double productResult = calculator.multiply(2.1,8.1);
+        assertEquals(17.01,productResult, 0.001);
+    }
+
+    @Test
+    void testShortProductIsCorrect(){
+        short productResult = calculator.multiply((short)2, (short)8);
+        assertEquals(16,productResult);
+    }
+
+    @Test
+    void testLongProductIsCorrect(){
+        long productResult = calculator.multiply(2101L,1010L);
+        assertEquals(2122010,productResult);
+    }
 
 }

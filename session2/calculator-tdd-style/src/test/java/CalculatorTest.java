@@ -92,12 +92,12 @@ public class CalculatorTest {
     @Test
     void testShortDifference(){
         short diffResult = calculator.subtract((short)60,(short)3);
-        assertEquals(63,diffResult);
+        assertEquals(57,diffResult);
     }
     @Test
     void testDoubleDifference(){
         Double diffResult = calculator.subtract(10.50,3.11);
-        assertEquals(13.61,diffResult);
+        assertEquals(7.39,diffResult, 0.001);
     }
 
     @Test
